@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import TextBox from './components/TextBox';
 import Alert from './components/Alert'
 import React, {useState} from 'react';
+import About from './components/About';
 
 function App() {
   const [alert, setAlert] = useState(null);
@@ -30,9 +31,10 @@ function App() {
   }
   return (
     <>
-    <Navbar mode={mode} toggleMode={toggle} heading="TextUtils App"/>
-    <Alert alert={alert} />
-    <TextBox mode={mode} showAlert={showAlert}/>
+      <Navbar mode={mode} toggleMode={toggle} heading="TextUtils App"/>
+      <Alert alert={alert} />
+      <TextBox mode={mode} showAlert={showAlert}/>
+      <About mode={mode}/>
     </>
   );
 }
