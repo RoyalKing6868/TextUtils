@@ -23,7 +23,8 @@ export default function TextBox(props) {
   };
   const handleRemoveSpace = () => {
     let newText = text.split(/[ ]+/);
-    setText(newText.join(" "));
+    newText=newText.join(" ")
+    setText(newText.trim());
     props.showAlert("Extra Spaces Removed", "success");
   };
   const handleCopy = () => {

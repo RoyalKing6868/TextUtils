@@ -4,6 +4,12 @@ import TextBox from './components/TextBox';
 import Alert from './components/Alert'
 import React, {useState} from 'react';
 import About from './components/About';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 
 function App() {
   const [alert, setAlert] = useState(null);
@@ -31,10 +37,19 @@ function App() {
   }
   return (
     <>
+    <Router>
       <Navbar mode={mode} toggleMode={toggle} heading="TextUtils App"/>
       <Alert alert={alert} />
-      <TextBox mode={mode} showAlert={showAlert}/>
-      <About mode={mode}/>
+      
+      <div className="container">
+      <Routes >
+          <Route path="/about" element={<About mode={mode}/>}>
+          </Route>
+          <Route path="/" element={<TextBox mode={mode} showAlert={showAlert}/>}>
+          </Route>
+        </Routes>
+      </div>
+    </Router>
     </>
   );
 }
