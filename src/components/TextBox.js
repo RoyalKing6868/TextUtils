@@ -52,22 +52,22 @@ export default function TextBox(props) {
             rows="5"
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-1" onClick={handleUpper}>
+        <button className="btn btn-primary mx-1 mb-1" onClick={handleUpper}>
           Upper Case
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleLower}>
+        <button className="btn btn-primary mx-1 mb-1" onClick={handleLower}>
           Lower Case
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleCap}>
+        <button className="btn btn-primary mx-1 mb-1" onClick={handleCap}>
           Capitalize
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleRemoveSpace}>
+        <button className="btn btn-primary mx-1 mb-1" onClick={handleRemoveSpace}>
           Remove Extra Spaces
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleCopy}>
+        <button className="btn btn-primary mx-1 mb-1" onClick={handleCopy}>
           Copy
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleClear}>
+        <button className="btn btn-primary mx-1 mb-1" onClick={handleClear}>
           Clear
         </button>
         <div className="summary">
