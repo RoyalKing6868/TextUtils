@@ -31,6 +31,7 @@ export default function TextBox(props) {
     let text = document.getElementById("myBox");
     text.select();
     navigator.clipboard.writeText(text.value);
+    document.getSelection().removeAllRanges();
     props.showAlert("Text Copied", "success");
   };
   const handleClear = () => {
@@ -74,7 +75,7 @@ export default function TextBox(props) {
         <div className="summary">
           <h2>Summary</h2>
           <p>
-            {text?.split(" ").length - 1} Words, {text?.length} Characters
+            {text?.split(" ").filter((element) => {return element.length!==0}).length} Words, {text?.length} Characters
           </p>
         </div>
       </div>
