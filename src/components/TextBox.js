@@ -39,7 +39,7 @@ export default function TextBox(props) {
     setText(newText);
     props.showAlert("Text Cleared", "success");
   };
-  const [text, setText] = useState();
+  const [text, setText] = useState("");
   return (
     <>
       <div className={`container text-${props.mode==='light'?'black':'white'}`}>
@@ -54,28 +54,28 @@ export default function TextBox(props) {
             rows="5"
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-1 mb-1" onClick={handleUpper}>
+        <button disabled={text?.length===0} className="btn btn-primary mx-1 mb-1" onClick={handleUpper}>
           Upper Case
         </button>
-        <button className="btn btn-primary mx-1 mb-1" onClick={handleLower}>
+        <button disabled={text?.length===0} className="btn btn-primary mx-1 mb-1" onClick={handleLower}>
           Lower Case
         </button>
-        <button className="btn btn-primary mx-1 mb-1" onClick={handleCap}>
+        <button disabled={text?.length===0} className="btn btn-primary mx-1 mb-1" onClick={handleCap}>
           Capitalize
         </button>
-        <button className="btn btn-primary mx-1 mb-1" onClick={handleRemoveSpace}>
+        <button disabled={text?.length===0} className="btn btn-primary mx-1 mb-1" onClick={handleRemoveSpace}>
           Remove Extra Spaces
         </button>
-        <button className="btn btn-primary mx-1 mb-1" onClick={handleCopy}>
+        <button disabled={text?.length===0} className="btn btn-primary mx-1 mb-1" onClick={handleCopy}>
           Copy
         </button>
-        <button className="btn btn-primary mx-1 mb-1" onClick={handleClear}>
+        <button disabled={text?.length===0} className="btn btn-primary mx-1 mb-1" onClick={handleClear}>
           Clear
         </button>
         <div className="summary">
           <h2>Summary</h2>
           <p>
-            {text?.split(" ").filter((element) => {return element.length!==0}).length} Words, {text?.length} Characters
+            {text?.split(/\s+/).filter((element) => {return element.length!==0}).length} Words, {text.length} Characters
           </p>
         </div>
       </div>
